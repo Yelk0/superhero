@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -37,6 +38,7 @@ public class SuperHeroControllerTest {
     private SuperHeroService superHeroService;
 
     @Test
+    @WithMockUser(username = "user", password = "password", roles = "USER")
     public void whenSuperheroesEndpointHitThenListOfSuperHeroesShouldBeReturned() throws Exception {
         SuperHero superMan = new SuperHero();
         superMan.setName("Superman");
@@ -55,6 +57,7 @@ public class SuperHeroControllerTest {
     }
 
     @Test
+    @WithMockUser(username = "user", password = "password", roles = "USER")
     public void whenEndpointHitWithValidIDThenSuperHeroShouldBeReturned() throws Exception {
         SuperHero superMan = new SuperHero();
         superMan.setName("Superman");
@@ -68,6 +71,7 @@ public class SuperHeroControllerTest {
     }
 
     @Test
+    @WithMockUser(username = "user", password = "password", roles = "USER")
     public void whenEndpointHitWithNotValidIDThen404ShouldBeReturned() throws Exception {
         SuperHero superMan = new SuperHero();
         superMan.setName("Superman");

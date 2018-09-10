@@ -9,7 +9,8 @@
 </head>
 <body class="bg-light">
     <div class="container py-5">
-            <div class="col-md-8 order-md-1">
+        <div class="row">
+            <div class="col-md-8 order-md-1 mb-3">
                 <h4 class="mb-3">New Super Hero</h4>
                 <form action="./api/superhero/add" method="post" class="form-signin">
                     <div class="row">
@@ -39,6 +40,10 @@
                                 <label class="custom-control-label" for="fly">Fly</label>
                             </div>
                             <div class="custom-control custom-checkbox">
+                                <input id="smart" type="checkbox" name="skills" value="SMART" class="custom-control-input"/>
+                                <label class="custom-control-label" for="smart">Smart</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
                                 <input id="strength" type="checkbox" name="skills" value="STRENGTH" class="custom-control-input"/>
                                 <label class="custom-control-label" for="strength">Strength</label>
                             </div>
@@ -51,6 +56,10 @@
                                 <label class="custom-control-label" for="laser_eyes">Laser eyes</label>
                             </div>
                             <div class="custom-control custom-checkbox">
+                                <input id="ritch" type="checkbox" name="skills" value="RITCH" class="custom-control-input"/>
+                                <label class="custom-control-label" for="ritch">Ritch</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
                                 <input id="fast" type="checkbox" name="skills" value="FAST" class="custom-control-input"/>
                                 <label class="custom-control-label" for="fast">Fast</label>
                             </div>
@@ -60,7 +69,7 @@
                             </div>
                             <div class="custom-control custom-checkbox">
                                 <input id="freezing" type="checkbox" name="skills" value="FREEZING" class="custom-control-input"/>
-                                <label class="custom-control-label" for="freezing">FREEZING</label>
+                                <label class="custom-control-label" for="freezing">Freezing</label>
                             </div>
                         </div>
                     </div>
@@ -85,6 +94,22 @@
                     </div>
                 </form>
             </div>
+            <div class="col-md-2 order-md-2 mb-3">
+            </div>
+            <div class="col-md-2 order-md-3 mb-3">
+                <div class="row">
+                    <form th:action="@{/logout}" method="post" class="mb-3">
+                        <input class="btn btn-md btn-secondary btn-block" type="submit" value="Sign Out"/>
+                    </form>
+                </div>
+                <div class="row">
+                    <a target="_blank" href="/api/superhero" class="btn btn-md btn-info btn-block mb-3">All Superheros</a>
+                </div>
+                <div class="row">
+                    <a target="_blank" href="/api/superhero/1" class="btn btn-md btn-info btn-block mb-3">First Superhero</a>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
