@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SuperHeros</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">New Super Hero</h4>
+                <form action="./api/superhero/add" method="post" class="form-signin">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="sr-only">Name</label>
+                            <input id="name" name="name" type="text" class="form-control" placeholder="Name" required/>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="pseudonym" class="sr-only">Pseudonym</label>
+                            <input id="pseudonym" name="pseudonym" type="text" class="form-control" placeholder="Pseudonym"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="publisher">Publisher</label>
+                            <select id="publisher" name="publisher" class="custom-select d-block w-100">
+                                <option value="DC">DC</option>
+                                <option value="MARVEL">Marvel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <h4 class="mb-4">Skills</h4>
+                            <div class="custom-control custom-checkbox">
+                                <input id="fly" type="checkbox" name="skills" value="FLY" class="custom-control-input"/>
+                                <label class="custom-control-label" for="fly">Fly</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input id="strength" type="checkbox" name="skills" value="STRENGTH" class="custom-control-input"/>
+                                <label class="custom-control-label" for="strength">Strength</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input id="flexible" type="checkbox" name="skills" value="FLEXIBLE" class="custom-control-input"/>
+                                <label class="custom-control-label" for="flexible">Flexible</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input id="laser_eyes" type="checkbox" name="skills" value="LASER_EYES" class="custom-control-input"/>
+                                <label class="custom-control-label" for="laser_eyes">Laser eyes</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input id="fast" type="checkbox" name="skills" value="FAST" class="custom-control-input"/>
+                                <label class="custom-control-label" for="fast">Fast</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input id="invisible" type="checkbox" name="skills" value="INVISIBLE" class="custom-control-input"/>
+                                <label class="custom-control-label" for="invisible">Invisible</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input id="freezing" type="checkbox" name="skills" value="FREEZING" class="custom-control-input"/>
+                                <label class="custom-control-label" for="freezing">FREEZING</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 mb-3">
+                            <h4 class="mb-4">Allies</h4>
+                        </div>
+                        <div class="col-md-10 mb-3">
+                            <div id="allies" class="mb-3">
+                            </div>
+                            <button id="more" type="button" class="btn btn-md btn-secondary">More</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstAppearance">First appearance</label>
+                            <input id="firstAppearance" name="firstAppearance" type="date" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/superhero.js"></script>
+</body>
+</html>
