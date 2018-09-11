@@ -39,10 +39,10 @@ public class SuperHeroController {
     public ResponseEntity<Object> getSuperHero(@PathVariable Long id){
         Optional<SuperHero> superHero = superHeroService.findSuperHeroById(id);
         if (superHero.isPresent()){
-            logger.debug("Accessing superhero {}",superHero.get().getId());
+            logger.debug("Accessing superhero {}", superHero.get().getId());
             return ResponseEntity.ok().body(superHero.get());
         } else {
-            logger.error("Accessing non existing superhero {}",superHero.get().getId());
+            logger.error("Accessing non existing superhero {}", id);
             return ResponseEntity.notFound().build();
         }
     }
